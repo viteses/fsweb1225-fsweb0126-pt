@@ -1,9 +1,30 @@
 import { useState } from "react";
+import {
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
+  const [loggedUser, setLoggedUser] = useState(null);
+
+  function loginUser() {
+    setLoggedUser("Emre");
+  }
   return (
     <>
-      <h1>FSWEB1225-FSWEB0126-PT by Emre</h1>
+      <Switch>
+        <Route path="/browse">
+          <h1>Browse</h1>
+        </Route>
+        <Route path="/login">
+          <h1>Login</h1>
+        </Route>
+        <Route exact path="/">
+          {loggedUser ? <Redirect to="/browse" /> : <Redirect to="/login" />}
+        </Route>
+      </Switch>
+      <button onClick={loginUser}>Login User</button>
     </>
   );
 }

@@ -4,6 +4,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom/cjs/react-router-dom.min";
+import Login from "./pages/Login";
 
 function App() {
   const [loggedUser, setLoggedUser] = useState(null);
@@ -18,7 +19,7 @@ function App() {
           <h1>Browse</h1>
         </Route>
         <Route path="/login">
-          <h1>Login</h1>
+          <Login />
         </Route>
         <Route exact path="/">
           {loggedUser ? <Redirect to="/browse" /> : <Redirect to="/login" />}

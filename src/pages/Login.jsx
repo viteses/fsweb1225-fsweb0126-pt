@@ -17,11 +17,12 @@ const Container = styled.div`
   color: white;
 `;
 
-function Login() {
+function Login(props) {
+  const { setLoggedUser } = props;
   return (
     <Container>
       <Header />
-      <LoginForm />
+      <LoginForm setLoggedUser={setLoggedUser} />
       <SiteMap />
     </Container>
   );

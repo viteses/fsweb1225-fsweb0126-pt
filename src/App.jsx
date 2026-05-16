@@ -16,10 +16,10 @@ function App() {
     <>
       <Switch>
         <Route path="/browse">
-          <h1>Browse</h1>
+          <h1>Browse: {loggedUser}</h1>
         </Route>
         <Route path="/login">
-          <Login />
+          <Login setLoggedUser={setLoggedUser} />
         </Route>
         <Route exact path="/">
           {loggedUser ? <Redirect to="/browse" /> : <Redirect to="/login" />}

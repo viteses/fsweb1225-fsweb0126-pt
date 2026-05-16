@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.header`
-  height: 3rem;
-  border-bottom: 1px solid gray;
+  height: 5rem;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
   padding: 0 4rem;
   display: flex;
   align-items: center;

@@ -5,9 +5,11 @@ import {
   Switch,
 } from "react-router-dom/cjs/react-router-dom.min";
 import Login from "./pages/Login";
+import Browse from "./pages/Browse";
 
 function App() {
   const [loggedUser, setLoggedUser] = useState(null);
+  const [profile, setProfile] = useState("blue");
 
   function loginUser() {
     setLoggedUser("Emre");
@@ -16,7 +18,7 @@ function App() {
     <>
       <Switch>
         <Route path="/browse">
-          <h1>Browse: {loggedUser}</h1>
+          <Browse profile={profile} />
         </Route>
         <Route path="/login">
           <Login setLoggedUser={setLoggedUser} />
